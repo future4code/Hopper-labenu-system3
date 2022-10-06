@@ -1,13 +1,13 @@
 ### Endpoint de teste
 GET http://localhost:3003/ping
 
-### Exercício 1 - Create user
-POST http://localhost:3003/users
+### Turma - Create Turma
+POST http://localhost:3003/turma
 Content-Type: application/json
 
 {
-    "email": "teste55@gmail.com",
-    "password": "teste1234"
+    "nome": "turma0",
+    "modulo": "0"
 }
 
 ### Exercício 2 - Get users
