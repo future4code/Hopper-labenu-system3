@@ -17,6 +17,7 @@ export const createTurma = async (req: Request, res: Response) => {
         //     name,
         //     price
         // }
+        // 
 
         const newClass = new Turma(
             generateId (),
