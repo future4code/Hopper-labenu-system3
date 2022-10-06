@@ -37,3 +37,23 @@ Content-Type: application/json
 
 ### Exercício 6 - Get user purchases
 GET http://localhost:3003/users/103/purchases
+
+
+### Projeto docente
+POST http://localhost:3003/criar-docente
+Content-Type: application/json
+
+{
+    "nome":"Fulano",
+    "email":"fulanbo@fulano.com",
+    "data_nasc":"13/02/1990",
+    "turma_id":"002"
+}
+
+### Buscar Docentes
+GET http://localhost:3003/docentes
+
+### Mudar Docente de Turma
+POST http://localhost:3003/docente/
+
+### 
