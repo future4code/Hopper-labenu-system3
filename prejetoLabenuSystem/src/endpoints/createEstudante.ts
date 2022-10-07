@@ -1,4 +1,6 @@
 import { Request, Response } from "express";
+
+
 import {Estudante} from "../models/Estudante";
 import { v4 as generateId } from 'uuid';
 import { TurmaDatabase } from "../database/TurmaDatabase";
@@ -8,6 +10,8 @@ export const createEstudante = async (req: Request, res: Response) => {
     let errorCode = 400
     try {
         let {nome, email, dataNascimento, turmaId} = req.body
+        // let {nome, email, dataNascimento} = req.body
+        
         const estudanteDatabase = new EstudanteDatabase
         
         if(!nome || !email || !dataNascimento || !turmaId){
@@ -15,16 +19,25 @@ export const createEstudante = async (req: Request, res: Response) => {
         }
 
         const alunoExist = await estudanteDatabase.getByName(nome)
-        if(alunoExist[0].length > 0) {
+        if(alunoExist[0].nome.length > 0) {
             throw new Error("Aluno já registrado");            
         }
-        
-        // const turmaIdExist = await 
+
+        function FormataStringData(data: string) {
+            var dia  = data.split("/")[0];
+            var mes  = data.split("/")[1];
+            var ano  = data.split("/")[2];
+      
+            return ano + '-' + ("0"+mes).slice(-2) + '-' + ("0"+dia).slice(-2);
+        }
+
+        let dateForTable: any = FormataStringData(dataNascimento)
+
         const newStudent = new Estudante(
             generateId(),
             nome,
             email,
-            dataNascimento,
+            dateForTable,
             turmaId
         )
         
