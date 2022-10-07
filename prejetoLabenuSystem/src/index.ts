@@ -2,6 +2,8 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import {createTurma} from "./endpoints/createTurma"
+import { createEstudante } from './endpoints/createEstudante'
+import { searchEstudante } from './endpoints/searchEstudante'
 
 dotenv.config()
 const app = express()
@@ -21,9 +23,9 @@ app.post("/turma", createTurma)
 //
 
 // Estudante
-//
+app.post("/estudante", createEstudante)
 
-//
+app.get("/estudante/:nome", searchEstudante)
 
 //
 

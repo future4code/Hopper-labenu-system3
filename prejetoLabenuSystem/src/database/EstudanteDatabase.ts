@@ -14,4 +14,5 @@ export class EstudanteDatabase extends BaseDatabase{
         .where({nome})
         return result
     }
+
 }
