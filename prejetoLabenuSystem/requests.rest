@@ -21,8 +21,13 @@ Content-Type: application/json
     "turmaId":"3a9d0dd3-96be-4603-9a2f-f64fd04b26da"
 }
 
-### Exercício 3 - Create product
-GET http://localhost:3003/estudante/testealuno1
+### Estudante - Edit product
+PUT http://localhost:3003/estudante/editar-turma
+Content-Type: application/json
+{
+    "email":"testealuno1",
+    "newClass":"1fc667fc-f114-4e66-a422-110fa74b6c46"
+}
 
 
 ### Exercício 4 - Get products

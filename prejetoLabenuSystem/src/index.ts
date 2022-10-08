@@ -4,6 +4,8 @@ import dotenv from 'dotenv'
 import {createTurma} from "./endpoints/createTurma"
 import { createEstudante } from './endpoints/createEstudante'
 import { searchEstudante } from './endpoints/searchEstudante'
+import { editEstudanteTurma } from './endpoints/editEstudanteTurma'
+import { searchClassActiv } from './endpoints/searchClassActiv'
 
 dotenv.config()
 const app = express()
@@ -18,7 +20,7 @@ app.listen(process.env.PORT || 3003, () => {
 // Turma
 app.post("/turma", createTurma)
 
-//
+app.get("/turmas/ativas", searchClassActiv)
 
 //
 
@@ -27,6 +29,6 @@ app.post("/estudante", createEstudante)
 
 app.get("/estudante/:nome", searchEstudante)
 
-//
+app.put("/estudante/editar-turma", editEstudanteTurma)
 
 // Docente

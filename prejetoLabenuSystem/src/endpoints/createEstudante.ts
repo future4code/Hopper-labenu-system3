@@ -43,7 +43,7 @@ export const createEstudante = async (req: Request, res: Response) => {
         
         await estudanteDatabase.create(newStudent)
 
-        res.status(201).send({messge: "Aluno cadastrado", newStudent: newStudent})
+        res.status(201).send({message: "Aluno cadastrado", newStudent: newStudent})
 
     } catch (error) {
         res.status(errorCode).send({message: error.message})
