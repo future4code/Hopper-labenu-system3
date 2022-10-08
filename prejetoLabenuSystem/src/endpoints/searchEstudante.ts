@@ -6,7 +6,7 @@ export const searchEstudante = async (req: Request, res: Response) => {
     try {
         let nome = req.params.nome
         const estudanteDatabase = new EstudanteDatabase
-        console.log(nome)
+        // console.log(nome)
         
         if(!nome){
             throw new Error("Favor informar um nome");            
