@@ -33,6 +33,7 @@ export abstract class BaseDatabase {
     .where({ id}) 
     return result
   }
+
 }
 
 export default BaseDatabase;
