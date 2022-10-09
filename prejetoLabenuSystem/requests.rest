@@ -10,17 +10,25 @@ Content-Type: application/json
     "modulo": "0"
 }
 
-### Exercício 2 - Get users
-GET http://localhost:3003/users
-
-### Exercício 3 - Create product
-POST http://localhost:3003/products
+### Estudante Create Estudante
+POST http://localhost:3003/estudante
 Content-Type: application/json
 
 {
-    "name": "Teste Product",
-    "price": 500
+    "nome":"testealuno1",
+    "email":"testealuno3@gmail.com",
+    "dataNascimento":"10/10/2010",
+    "turmaId":"3a9d0dd3-96be-4603-9a2f-f64fd04b26da"
 }
+
+### Estudante - Edit product
+PUT http://localhost:3003/estudante/editar-turma
+Content-Type: application/json
+{
+    "email":"testealuno1",
+    "newClass":"1fc667fc-f114-4e66-a422-110fa74b6c46"
+}
+
 
 ### Exercício 4 - Get products
 GET http://localhost:3003/products
